@@ -7,4 +7,8 @@ class Company < ActiveRecord::Base
     # same as...
     freebies.create(dev: dev, item_name: item_name, value: value)
   end
+
+  def self.oldest_company
+    order(:founding_year).first
+  end
 end
